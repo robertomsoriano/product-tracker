@@ -44,11 +44,11 @@ export async function getAmazonProductData(html) {
 
 const productCode = `B08235KN9V`
 
-const productURL = `https://www.amazon.com/Simple-Mobile-Prepaid-Iphone-Carrier/dp/${productCode}`
+const productURL = `https://www.amazon.com/Simple-Mobile-Prepaid-Iphone-Carrier/dp/`
 
 // Send product data 
-export async function scrapePage() {
-    const html = await getHTML(productURL);
+export async function scrapePage(item = productCode) {
+    const html = await getHTML(productURL + item);
     const amazonProduct = await getAmazonProductData(html);
     // console.log(`The price is ${JSON.stringify(amazonProduct)}`);
     return amazonProduct
