@@ -1,0 +1,33 @@
+{
+  "name": "product_tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "~7.7.7",
+    "@babel/polyfill": "~7.7.0",
+    "@babel/preset-env": "~7.7.7",
+    "axios": "0.19.2",
+    "babel-loader": "~8.0.6",
+    "babel-plugin-module-resolver": "~4.0.0",
+    "body-parser": "~1.19.0",
+    "cheerio": "1.0.0-rc.3",
+    "cors": "~2.8.5",
+    "express": "~4.17.1",
+    "node-cron": "2.0.3",
+    "webpack": "~4.41.5",
+    "webpack-cli": "~3.3.10",
+    "webpack-node-externals": "~1.7.2"
+  },
+  "devDependencies": {
+    "babel-watch": "^7.0.0",
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "build": "webpack --progress",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "watch": "babel-watch -L src/index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  }
+}
