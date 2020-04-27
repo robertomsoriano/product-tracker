@@ -46,6 +46,7 @@ const productCode = `B08235KN9V`
 
 const productURL = `https://www.amazon.com/Simple-Mobile-Prepaid-Iphone-Carrier/dp/${productCode}`
 
+// Send product data 
 export async function scrapePage() {
     const html = await getHTML(productURL);
     const amazonProduct = await getAmazonProductData(html);
